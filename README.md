@@ -34,7 +34,6 @@ hit **Check for updates** on the Filters page.
 | StreamWish "wish" family | hlswish / obeywish embed players |
 | Ad / pop-under / redirect domains | Malvertising domains bundled with those players |
 | Broad — dual-use | `vk.com`, `ok.ru`, `workers.dev` — abused for embeds but also legitimate; review if something breaks |
-| Review — NOT streaming | `wikipedia.*` / `wikimedia.org`, left **disabled** (commented) because they're educational, not streaming |
 
 ## Maintaining it
 

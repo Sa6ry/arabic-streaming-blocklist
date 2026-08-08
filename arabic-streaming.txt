@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.08.08.1
+! Version: 2026.08.08.2
 ! Last modified: 2026-08-08
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -88,13 +88,3 @@
 ||vk.com^
 ||ok.ru^
 ||workers.dev^
-!
-!#############################################################
-!# Review before enabling — NOT video streaming
-!# Wikipedia/Wikimedia are educational reference sites and were
-!# found in the local rules. They are left DISABLED (commented)
-!# here on purpose. Uncomment only if you truly want them blocked.
-!#############################################################
-! ||wikipedia.org^
-! ||wikipedia.com^
-! ||wikimedia.org^
