@@ -33,7 +33,6 @@ hit **Check for updates** on the Filters page.
 | Video file-hosts & embed players | The players the portals embed (mixdrop, voe, streamtape, dood, filemoon, vidmoly, vidhide, uqload, …) |
 | StreamWish "wish" family | hlswish / obeywish embed players |
 | Ad / pop-under / redirect domains | Malvertising domains bundled with those players |
-| Broad — dual-use | `vk.com`, `ok.ru`, `workers.dev` — abused for embeds but also legitimate; review if something breaks |
 
 ## Maintaining it
 
@@ -46,10 +45,6 @@ hit **Check for updates** on the Filters page.
 
 ## Notes / caveats
 
-- `workers.dev` blocks **all** Cloudflare Workers apps — broad. Kept because a
-  player was seen hosted there; remove it if a legitimate app stops working.
-- `vk.com` and `ok.ru` are large social networks; blocking them fully is a
-  deliberate, aggressive choice.
 - Blocking is DNS-level: it stops the domains from resolving. A determined user
   on a VPN or with hard-coded DNS can bypass it — pair with router-level DNS
   enforcement if that matters.
