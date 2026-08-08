@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.08.08.4
+! Version: 2026.08.08.5
 ! Last modified: 2026-08-08
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -85,3 +85,16 @@
 ||vibuxer.com^
 ||zvde-dsn-02.site^
 ||bvtpk.com^
+!
+!#############################################################
+!# Dual-use social networks — blocked on purpose
+!# NOTE: vk.com (VKontakte) and ok.ru (Odnoklassniki) are
+!# LEGITIMATE Russian social networks, not piracy-only domains.
+!# They are blocked here because Arabic pirate portals (e.g.
+!# myCima) embed VK/OK-hosted video as a fallback player, so
+!# leaving them open defeats the rest of the list. If anyone on
+!# your network genuinely uses these social networks, delete the
+!# two lines below.
+!#############################################################
+||vk.com^
+||ok.ru^
