@@ -14,7 +14,7 @@ in bulk — so it's short, readable, and easy to prune.
    - **Name:** `Arabic Streaming`
    - **URL:**
      ```
-     https://raw.githubusercontent.com/Sa6ry/ArabicStreaming/main/arabic-streaming.txt
+     https://raw.githubusercontent.com/Sa6ry/arabic-streaming-blocklist/main/arabic-streaming.txt
      ```
 3. Save. AdGuard fetches and enables it immediately.
 4. Move the same domains **out** of *Filters → Custom filtering rules* so you're
