@@ -1,0 +1,100 @@
+! Title: Arabic Streaming & Video-Host Blocklist
+! Description: Free/pirate Arabic streaming portals plus the generic video file-host and embed-player domains they rely on. Curated from AdGuard Home query-log analysis on a home network to reduce time/data spent on video streaming.
+! Homepage: https://github.com/Sa6ry/ArabicStreaming
+! License: https://github.com/Sa6ry/ArabicStreaming/blob/main/LICENSE
+! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
+! Expires: 1 day
+! Version: 2026.08.08.1
+! Last modified: 2026-08-08
+!
+! ── How to use ──────────────────────────────────────────────
+! AdGuard Home → Filters → DNS blocklists → Add blocklist → Add a custom list
+!   Name: Arabic Streaming
+!   URL:  https://raw.githubusercontent.com/Sa6ry/ArabicStreaming/main/arabic-streaming.txt
+! Then remove these same domains from Filters → Custom filtering rules.
+! ────────────────────────────────────────────────────────────
+!
+!#############################################################
+!# Arabic streaming / drama & series portals
+!#############################################################
+||q-drama.com^
+||musalsalatflah.com^
+||ahwaktv.net^
+||hdup20.com^
+||brstej.com^
+||gamezone.cam^
+||mbc.net^
+||tubi.tv^
+||tubi.com^
+!
+!#############################################################
+!# Video file-hosts & embed players (used by pirate aggregators)
+!#############################################################
+||mixdrop.is^
+||mixdrop.top^
+||voe.sx^
+||streamtape.com^
+||dood.so^
+||filemoon.sx^
+||uqload.is^
+||uqload.ws^
+||vidmoly.to^
+||vidmoly.biz^
+||vidhideplus.com^
+||vidhidepro.com^
+||luluvid.com^
+||luluvdo.com^
+||vudeo.ws^
+||vidspeed.org^
+||vidoba.org^
+||viidhdr.shop^
+||embedseek.com^
+||rubyvidhub.com^
+||playmogo.com^
+||vfaststream.co^
+||turbovidhls.com^
+||abyssplayer.com^
+||forafile.com^
+||krakenfiles.com^
+||vidsonic.net^
+||cdnplus.org^
+||anafast.org^
+||mp4plus.org^
+||liiivideo.com^
+||vidaraa.cc^
+||uploady.io^
+||listeamed.net^
+!
+!#############################################################
+!# StreamWish "wish" family (embed players)
+!#############################################################
+||hlswish.com^
+||obeywish.com^
+!
+!#############################################################
+!# Ad / pop-under / redirect domains bundled with those players
+!#############################################################
+||byselapuix.com^
+||bysekoze.com^
+||morencius.com^
+||vibuxer.com^
+||zvde-dsn-02.site^
+!
+!#############################################################
+!# Broad — dual-use domains (legit uses exist; review if needed)
+!# These are frequently abused to embed pirated video, but also
+!# host legitimate content. Blocking them is aggressive.
+!#############################################################
+||vk.com^
+||ok.ru^
+||workers.dev^
+!
+!#############################################################
+!# Review before enabling — NOT video streaming
+!# Wikipedia/Wikimedia are educational reference sites and were
+!# found in the local rules. They are left DISABLED (commented)
+!# here on purpose. Uncomment only if you truly want them blocked.
+!#############################################################
+! ||wikipedia.org^
+! ||wikipedia.com^
+! ||wikimedia.org^
