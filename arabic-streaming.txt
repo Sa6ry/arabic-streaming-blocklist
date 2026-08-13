@@ -4,8 +4,8 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.08.08.5
-! Last modified: 2026-08-08
+! Version: 2026.08.13.1
+! Last modified: 2026-08-13
 !
 ! ── How to use ──────────────────────────────────────────────
 ! AdGuard Home → Filters → DNS blocklists → Add blocklist → Add a custom list
@@ -98,3 +98,15 @@
 !#############################################################
 ||vk.com^
 ||ok.ru^
+
+!#############################################################
+!# Mainstream video embeds — blocked on purpose
+!# NOTE: IMDb is a legitimate movie database, not a pirate site.
+!# Only its VIDEO delivery hosts are blocked here, so trailers
+!# and clips stop playing. Browsing imdb.com, posters, ratings
+!# and cast data all keep working normally. Delete the three
+!# lines below if you want IMDb trailers back.
+!#############################################################
+||imdb-video.media-imdb.com^
+||video.media-imdb.com^
+||video-http.media-imdb.com^
