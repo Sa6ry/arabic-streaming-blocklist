@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.16.1
+! Version: 2026.09.16.2
 ! Last modified: 2026-09-16
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -38,6 +38,19 @@
 !# portals. Found via AdGuard Home query-log analysis.
 !#############################################################
 ||miraculous.to^
+!
+!#############################################################
+!# Canadian broadcaster streaming (CBC Gem / Radio-Canada)
+!# gem.cbc.ca is the portal; services.radio-canada.ca is the
+!# shared CBC/Radio-Canada playback API, and blocking only the
+!# portal can leave video playing. All three are Akamai-fronted,
+!# so IP blocking is useless — DNS is the lever.
+!# NOTE: cbc.ca and radio-canada.ca NEWS are deliberately left
+!# working; only the streaming/playback hosts are blocked.
+!#############################################################
+||gem.cbc.ca^
+||services.radio-canada.ca^
+||tpfeed.cbc.ca^
 !
 !#############################################################
 !# Video file-hosts & embed players (used by pirate aggregators)
