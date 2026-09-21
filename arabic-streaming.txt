@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.21.7
+! Version: 2026.09.21.8
 ! Last modified: 2026-09-21
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -218,15 +218,12 @@
 ||primevideo.com^
 !
 !#############################################################
-!# X / Twitter video
-!# ONLY the video hosts. pbs.twimg.com (images) and
-!# abs.twimg.com (site assets) are deliberately left alone -
-!# blocking those breaks X entirely rather than just video.
-!# pscp.tv is Periscope, which still backs live video on X.
-!# Side effect: video embedded in news articles may also stop.
+!# X / Twitter video - DELIBERATELY NOT BLOCKED
+!# video.twimg.com and pscp.tv were blocked on 2026-09-21 and
+!# unblocked the same day at the owner's request: the block
+!# also killed video embedded in news articles, which was not
+!# wanted. Do not re-add these without asking.
 !#############################################################
-||video.twimg.com^
-||pscp.tv^
 !
 !#############################################################
 !# Online gambling / betting
