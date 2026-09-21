@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.21.1
+! Version: 2026.09.21.2
 ! Last modified: 2026-09-21
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -112,6 +112,19 @@
 ||uploady.io^
 ||listeamed.net^
 ||agl006.host^
+!
+!#############################################################
+!# Clip-search & entertainment portals seen launching players
+!# y.getyarn.io serves short video clips (clip/quote search).
+!# evoke.ie is an Irish entertainment/news site that appeared
+!# seconds before repeated uqload embed attempts, i.e. it looks
+!# like the page the blocked player was being launched from.
+!# NOTE: evoke.ie is a LEGITIMATE news site, not a pirate host.
+!# It is blocked here on purpose because of the embeds; delete
+!# the line if you want its news content back.
+!#############################################################
+||getyarn.io^
+||evoke.ie^
 !
 !#############################################################
 !# StreamWish "wish" family (embed players)
