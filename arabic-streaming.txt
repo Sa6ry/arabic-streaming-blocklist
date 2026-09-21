@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.21.6
+! Version: 2026.09.21.7
 ! Last modified: 2026-09-21
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -139,6 +139,7 @@
 ||mp4plus.*^
 ||yourupload.*^
 ||cdnz.quest^
+||cdnz.*^
 ||bowercdn.net^
 ||deprivedemeanourdrudgery.com^
 !
@@ -200,6 +201,50 @@
 !#############################################################
 ||themoviedb.*^
 ||tmdb.*^
+!
+!#############################################################
+!# Amazon Prime Video
+!# Not in AdGuard's blocked-services catalogue, so it was the
+!# one mainstream service still open after the other 15 were
+!# enabled. Caught streaming live 2026-09-21 (cf-timedtext =
+!# subtitles, cf-trickplay = scrub thumbnails, aiv-delivery =
+!# video segments).
+!# NOTE: amazon.com is deliberately NOT blocked - Prime Video
+!# shares domains with Amazon shopping and AWS.
+!#############################################################
+||pv-cdn.net^
+||aiv-delivery.net^
+||aiv-cdn.net^
+||primevideo.com^
+!
+!#############################################################
+!# X / Twitter video
+!# ONLY the video hosts. pbs.twimg.com (images) and
+!# abs.twimg.com (site assets) are deliberately left alone -
+!# blocking those breaks X entirely rather than just video.
+!# pscp.tv is Periscope, which still backs live video on X.
+!# Side effect: video embedded in news articles may also stop.
+!#############################################################
+||video.twimg.com^
+||pscp.tv^
+!
+!#############################################################
+!# Online gambling / betting
+!# SCOPE NOTE: this is not streaming. It is kept here because
+!# this list is what the Vancouver router subscribes to, but a
+!# dedicated gambling category list would cover the mirrors
+!# better - these domains rotate constantly.
+!# Caught 2026-09-21 as a single burst: Stake casino plus
+!# betting mirror domains.
+!# mediumrare.imgix.net is Stake's tenant on the shared imgix
+!# CDN - only that subdomain is blocked, NOT imgix.net itself,
+!# which many legitimate sites use.
+!#############################################################
+||stake.com^
+||mcitytoto78.com^
+||sportcityy.com^
+||citysport-event.pro^
+||mediumrare.imgix.net^
 !
 !#############################################################
 !# StreamWish "wish" family (embed players)
