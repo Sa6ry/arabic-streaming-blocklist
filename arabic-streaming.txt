@@ -4,8 +4,8 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.16.2
-! Last modified: 2026-09-16
+! Version: 2026.09.21.1
+! Last modified: 2026-09-21
 !
 ! ── How to use ──────────────────────────────────────────────
 ! AdGuard Home → Filters → DNS blocklists → Add blocklist → Add a custom list
@@ -69,6 +69,28 @@
 ||vidhidepro.com^
 ||luluvid.com^
 ||luluvdo.com^
+!
+!#############################################################
+!# TLD-rotation wildcards for the file-hosts above
+!# These hosts hop TLDs to dodge blocklists: uqload was blocked
+!# on .is and .ws, then turned up live as strm7.uqload.vc and
+!# streamed fine. The ||name.*^ form covers every current and
+!# future TLD, so a new one does not need a list update.
+!# The explicit rules above are kept as a fallback.
+!#############################################################
+||uqload.*^
+||uqload.vc^
+||mixdrop.*^
+||voe.*^
+||streamtape.*^
+||dood.*^
+||filemoon.*^
+||vidmoly.*^
+||vidhideplus.*^
+||vidhidepro.*^
+||vidhide.*^
+||luluvid.*^
+||luluvdo.*^
 ||vudeo.ws^
 ||vidspeed.org^
 ||vidoba.org^
@@ -96,6 +118,8 @@
 !#############################################################
 ||hlswish.com^
 ||obeywish.com^
+||hlswish.*^
+||obeywish.*^
 !
 !#############################################################
 !# Ad / pop-under / redirect domains bundled with those players
