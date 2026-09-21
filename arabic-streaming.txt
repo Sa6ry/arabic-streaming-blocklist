@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.21.4
+! Version: 2026.09.21.5
 ! Last modified: 2026-09-21
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -157,6 +157,34 @@
 ||vidsrc.*^
 ||vuflix.*^
 ||hayyashoot.*^
+!
+!#############################################################
+!# Caught live 2026-09-21 03:39-03:40 — portal-hopping session
+!# One session cycled ~20 portals in 90s. These resolved while
+!# vuflix / vidsrc / hayyashoot / mixdrop / voe / vidaraa were
+!# all being refused, so they are the same browsing attempt:
+!#   egydead    - Egyptian/Arabic pirate portal (tv10.egydead.live)
+!#   streamhg   - embed/file-host (test.streamhg.com)
+!#   hgcloud    - StreamHG delivery CDN
+!#   akoam      - variant spelling of akwam, already blocked
+!#   aflam      - Arabic "films" portal (v.aflam.news)
+!#   anamov     - movie portal (w.anamov.cam)
+!#   ifushaar   - portal/CDN seen mid-cluster
+!#   vidspeed / vidoba - already blocked on .org, hopped to .cc
+!# audinifer.com is a pop-under, same family as bysekoze /
+!# morencius below. The 4b7n... .top host is a random-hash CDN.
+!#############################################################
+||egydead.*^
+||streamhg.*^
+||hgcloud.*^
+||akoam.*^
+||aflam.*^
+||anamov.*^
+||ifushaar.*^
+||vidspeed.*^
+||vidoba.*^
+||audinifer.com^
+||4b7n2m9x0k3t8h5.top^
 !
 !#############################################################
 !# StreamWish "wish" family (embed players)
