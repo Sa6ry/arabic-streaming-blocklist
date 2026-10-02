@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.02.5
+! Version: 2026.10.02.6
 ! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -355,6 +355,23 @@
 !# name cuts playback only. Verified those still resolve.
 !# uts-api.* is deliberately NOT blocked - it is the TV app's
 !# catalog/metadata API, not playback.
+!#
+!# sps-media - added 2026-10-02 23:48 UTC. 192.168.19.125 queried
+!# it 17x in a few minutes while transferring almost nothing and
+!# while play-edge/vod-ap-amt stayed blocked: the shape of a TV
+!# app retrying a media endpoint that cannot deliver. It is NOT a
+!# shared edge - it carries its own EV certificate whose only SAN
+!# is DNS:sps-media.apple.com, on Apple's own 17.33.19x, fronted
+!# by Apple's "daiquiri" media server. Independent proxy rule
+!# sets file it under Apple TV+ specifically (Zenzi-Herman/
+!# clash-rules apple-tv.yaml lists it beside tv.apple.com and
+!# videos.apple.com; Lixiao-bai's "TV+" ruleset routes it via US)
+!# and none file it under a Photos/iCloud rule set. The client
+!# queries all three names, so all three are blocked; the parent
+!# sbz.apple.com and v.aaplimg.com namespaces are left alone.
+||sps-media.apple.com^
+||sps-media.v.aaplimg.com^
+||sps-media.awusw2.sbz.apple.com^
 
 !#############################################################
 !# MSN / Windows widget video — caught 2026-10-02 02:16 UTC
