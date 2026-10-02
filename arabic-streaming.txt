@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.02.4
+! Version: 2026.10.02.5
 ! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -373,3 +373,29 @@
 !# (the video host maps to a1830.dscg2.akamai.net instead)
 !#############################################################
 ||prod-streaming-video-msn-com.akamaized.net^
+
+!#############################################################
+!# Connatix video players — caught 2026-10-02 03:11-03:16 UTC
+!# Connatix is a publisher video player/delivery platform. It
+!# turned up on MBP-Judy while reading thewrap.com and
+!# i.insider.com: vid / cds / cd / capi / img .connatix.com all
+!# resolved together. vid.connatix.com carries a dedicated cert
+!# (CN=vid.connatix.com, single SAN) so it is video-only.
+!# The client ALSO queries the Cloudflare-flattened CNAME names
+!# directly, so blocking the apex alone is not enough - the
+!# five explicit *.connatix.com.cdn.cloudflare.net names below
+!# are Connatix-specific and safe to block by exact name.
+!# The articles themselves keep working: thewrap.com and
+!# i.insider.com resolve through their own hosts.
+!# NOT blocked here on purpose: imasdk.googleapis.com and
+!# s0.2mdn.net (shared Google ad SDKs), staticvim.b-cdn.net
+!# (general BunnyCDN), sb.scorecardresearch.com (analytics),
+!# p149-sharedstreams.icloud.com (iCloud Shared Photos, not
+!# video streaming).
+!#############################################################
+||connatix.com^
+||vid.connatix.com.cdn.cloudflare.net^
+||cds.connatix.com.cdn.cloudflare.net^
+||cd.connatix.com.cdn.cloudflare.net^
+||capi.connatix.com.cdn.cloudflare.net^
+||img.connatix.com.cdn.cloudflare.net^
