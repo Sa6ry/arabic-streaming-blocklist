@@ -4,8 +4,8 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.09.21.8
-! Last modified: 2026-09-21
+! Version: 2026.10.02.1
+! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
 ! AdGuard Home → Filters → DNS blocklists → Add blocklist → Add a custom list
@@ -285,3 +285,34 @@
 ||imdb-video.media-imdb.com^
 ||video.media-imdb.com^
 ||video-http.media-imdb.com^
+
+!#############################################################
+!# Caught live 2026-10-02 01:47-01:50 UTC — pivot after the
+!# YouTube block. Over ~2.5 minutes one session cycled these
+!# while v.aflam.news, vid.mycima.cc, uqload.net, vidspeed.org,
+!# e.ifushaar.com, cvt-s1.agl006.host, prd.jwpltx.com and
+!# www.youtube.com were all being refused — same browsing
+!# attempt, so these are the gaps that let it keep going:
+!#   shahid4u    - major Arabic pirate portal (shahid4u.link)
+!#   wecima      - myCima/WeCima rebrand (mycima25.wecima.cam);
+!#                 mycima.cc was already blocked, this is the
+!#                 same family on a new domain
+!#   shahidwbas  - numbered player nodes (w5/w30.shahidwbas.tv)
+!#                 resolved in the same second as the refused
+!#                 myCima video CDN agl006.host
+!#   1vid        - embed/proxy player (1vid.xyz and
+!#                 proxydsfsdve9uy.1vid.online) resolved one
+!#                 second before the JW Player beacon jwpltx
+!#   fosta-tv    - already hopping TLDs: .monster AND .net seen
+!#                 one second apart
+!# Wildcarded because every one of these uses throwaway TLDs.
+!# zoro.uno is an anime pirate portal, pinned to the EXACT
+!# domain on purpose: ||zoro.*^ would also block zoro.co.uk,
+!# a legitimate UK tool retailer.
+!#############################################################
+||shahid4u.*^
+||wecima.*^
+||shahidwbas.*^
+||1vid.*^
+||fosta-tv.*^
+||zoro.uno^
