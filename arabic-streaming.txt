@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.02.1
+! Version: 2026.10.02.2
 ! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -316,3 +316,28 @@
 ||1vid.*^
 ||fosta-tv.*^
 ||zoro.uno^
+
+!#############################################################
+!# Apple TV+ playback — blocked at the owner's request
+!# 2026-10-02. The TV app was repeatedly running the full
+!# playback handshake on 192.168.19.125: tv.apple.com ->
+!# uts-api -> play-edge -> vod-ap-amt -> hls-amt-ve.
+!#   play-edge.itunes.apple.com    - playback authorisation /
+!#                                   manifest edge
+!#   vod-ap-amt.tv.apple.com       - video-on-demand host; it
+!#                                   is a CNAME to hls-amt-ve
+!#   hls-amt-ve.itunes.g.aaplimg.com - the HLS video edge it
+!#                                   resolves to, blocked as
+!#                                   well because the app also
+!#                                   queries it directly
+!# These are name-based blocks. They do NOT affect iCloud: the
+!# HLS edge shares IP 17.253.27.x with iCloud upload traffic,
+!# which keeps working because it is reached under a different
+!# name. App Store, Music, Photos and backups are untouched.
+!# NOTE: tv.apple.com itself is deliberately left resolving so
+!# the TV app and Apple's product pages still load - only
+!# playback is cut. Add ||tv.apple.com^ to block browsing too.
+!#############################################################
+||play-edge.itunes.apple.com^
+||vod-ap-amt.tv.apple.com^
+||hls-amt-ve.itunes.g.aaplimg.com^
