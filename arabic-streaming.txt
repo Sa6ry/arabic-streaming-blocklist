@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.02.3
+! Version: 2026.10.02.4
 ! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -355,3 +355,21 @@
 !# name cuts playback only. Verified those still resolve.
 !# uts-api.* is deliberately NOT blocked - it is the TV app's
 !# catalog/metadata API, not playback.
+
+!#############################################################
+!# MSN / Windows widget video — caught 2026-10-02 02:16 UTC
+!# prod-streaming-video-msn-com.akamaized.net is MSN's video
+!# delivery host; it is what plays autoplay clips in the MSN
+!# homepage and the Windows news/widgets panel.
+!# Blocked by EXACT hostname, never a wildcard: the TLS cert
+!# there is Akamai's generic *.akamaized.net, which is shared
+!# by thousands of unrelated sites.
+!# Verified the siblings use their own distinct chains, so MSN
+!# news text, images, static assets and the API keep working:
+!#   www.msn.com      -> www.msn.com.edgekey.net
+!#   img-s-msn-com    -> a1834.dscg2.akamai.net
+!#   static-global-s  -> a1999.dscg2.akamai.net
+!#   api.msn.com      -> ax-msedge.net
+!# (the video host maps to a1830.dscg2.akamai.net instead)
+!#############################################################
+||prod-streaming-video-msn-com.akamaized.net^
