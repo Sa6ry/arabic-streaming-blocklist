@@ -4,7 +4,7 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.02.2
+! Version: 2026.10.02.3
 ! Last modified: 2026-10-02
 !
 ! ── How to use ──────────────────────────────────────────────
@@ -341,3 +341,17 @@
 ||play-edge.itunes.apple.com^
 ||vod-ap-amt.tv.apple.com^
 ||hls-amt-ve.itunes.g.aaplimg.com^
+!# The TV app ALSO resolves the Akamai CNAME targets directly,
+!# so the three rules above alone were not enough - verified
+!# 2026-10-02 02:00-02:03, the client queried these by name:
+||play-edge.itunes.apple.com.edgesuite.net^
+||play-edge-cdn.itunes-apple.com.akadns.net^
+!# These two are play-edge-SPECIFIC names. They share IPs and
+!# one TLS cert with Music/Books/App Store commerce, but each
+!# of those resolves through its OWN chain
+!# (entitlements.edge-itunes-apple.com.akadns.net,
+!#  buylite.edge-itunes-apple.com.akadns.net,
+!#  commerce.itunes.apple.com.edgesuite.net), so blocking by
+!# name cuts playback only. Verified those still resolve.
+!# uts-api.* is deliberately NOT blocked - it is the TV app's
+!# catalog/metadata API, not playback.
