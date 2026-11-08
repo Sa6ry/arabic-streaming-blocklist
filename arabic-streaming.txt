@@ -4,8 +4,8 @@
 ! License: https://github.com/Sa6ry/arabic-streaming-blocklist/blob/main/LICENSE
 ! Syntax: AdGuard / Adblock (works as an AdGuard Home "DNS blocklist")
 ! Expires: 1 day
-! Version: 2026.10.12.1
-! Last modified: 2026-10-12
+! Version: 2026.11.08.1
+! Last modified: 2026-11-08
 !
 ! ── How to use ──────────────────────────────────────────────
 ! AdGuard Home → Filters → DNS blocklists → Add blocklist → Add a custom list
@@ -457,3 +457,19 @@
 ||freevee.com^
 ||xumo.tv^
 ||funimation.com^
+
+!#############################################################
+!# Reading / time-sink sites — blocked at the owner's request
+!# 2026-11-08
+!# SCOPE NOTE: these are not video. They are kept here for the
+!# same reason as the gambling section: this is the list both
+!# routers subscribe to.
+!#   wattpad.com  - user-posted fiction site and app (covers www,
+!#                  api, img and track. subdomains)
+!#   tvtropes.org - fan wiki about story tropes (covers static.
+!#                  and mediaproxy. subdomains)
+!# Both seen on 192.168.19.233 (Judy's MacBook) 2026-11-02 and
+!# 2026-11-08. Delete the two lines below to unblock.
+!#############################################################
+||wattpad.com^
+||tvtropes.org^
